@@ -160,39 +160,26 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		BC0A1A3D2CD5B2BD00650C7C /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				BC1084692CDD30550057C984 /* Managers */,
-				BC1084682CDD2F140057C984 /* Helpers */,
-				BC684D5A2CD5AA7200349FB2 /* Models */,
-				BCE0BE642CD7C0E4005BDA03 /* Logger */,
-				BC1E24522CD6AECC002DAB8C /* Extensions */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
 		BC1084682CDD2F140057C984 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				BC26D5D42CE6712B004E1F04 /* NSImageRepresentable.swift */,
+				BC10846A2CDD305C0057C984 /* UNNotificationWrapper.swift */,
 				BC1E24552CD6C30B002DAB8C /* Constant.swift */,
 				BC1E24502CD69F5D002DAB8C /* NotificationHelper.swift */,
+				BC1E24522CD6AECC002DAB8C /* Extensions */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		BC1084692CDD30550057C984 /* Managers */ = {
+		BC1084692CDD30550057C984 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
 				BC2C55952D32E9950005C125 /* DefaultOutputDeviceListener.swift */,
 				BC62017E2CE2C6F500DD3B85 /* AudioDeviceStore.swift */,
 				BC684D652CD5AA7200349FB2 /* AudioManager.swift */,
-				BC10846A2CDD305C0057C984 /* UNNotificationWrapper.swift */,
-				BC1E244E2CD681D5002DAB8C /* ShortcutManager.swift */,
-				BC10846C2CDD310F0057C984 /* StatusBarManager.swift */,
 			);
-			path = Managers;
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		BC1E24522CD6AECC002DAB8C /* Extensions */ = {
@@ -213,12 +200,21 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BC29B4102CE55B1D005C641F /* OnboardingWindow */ = {
+		BC29B4102CE55B1D005C641F /* OnboardingView */ = {
 			isa = PBXGroup;
 			children = (
 				BC29B4112CE55B34005C641F /* OnboardingVIew.swift */,
 			);
-			path = OnboardingWindow;
+			path = OnboardingView;
+			sourceTree = "<group>";
+		};
+		BC2C55982D3301310005C125 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC29B4102CE55B1D005C641F /* OnboardingView */,
+				BC684D602CD5AA7200349FB2 /* PreferencesView */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BC684D052CD4571800349FB2 = {
@@ -275,27 +271,23 @@
 			children = (
 				BC684D5D2CD5AA7200349FB2 /* PreferencesView.swift */,
 				BC684D5E2CD5AA7200349FB2 /* PreferencesViewModel.swift */,
+				BC684D5F2CD5AA7200349FB2 /* PreferencesWindowController.swift */,
 				BC0A1A382CD5B1DF00650C7C /* Components */,
 			);
 			path = PreferencesView;
-			sourceTree = "<group>";
-		};
-		BC684D612CD5AA7200349FB2 /* PreferencesWindow */ = {
-			isa = PBXGroup;
-			children = (
-				BC684D5F2CD5AA7200349FB2 /* PreferencesWindowController.swift */,
-				BC684D602CD5AA7200349FB2 /* PreferencesView */,
-			);
-			path = PreferencesWindow;
 			sourceTree = "<group>";
 		};
 		BC684D682CD5AA7200349FB2 /* AudioHop */ = {
 			isa = PBXGroup;
 			children = (
 				BC684D622CD5AA7200349FB2 /* AppDelegate.swift */,
-				BC29B4102CE55B1D005C641F /* OnboardingWindow */,
-				BC684D612CD5AA7200349FB2 /* PreferencesWindow */,
-				BC0A1A3D2CD5B2BD00650C7C /* Core */,
+				BC10846C2CDD310F0057C984 /* StatusBarManager.swift */,
+				BC1E244E2CD681D5002DAB8C /* ShortcutManager.swift */,
+				BC1084692CDD30550057C984 /* Audio */,
+				BC1084682CDD2F140057C984 /* Helpers */,
+				BC684D5A2CD5AA7200349FB2 /* Models */,
+				BC2C55982D3301310005C125 /* Views */,
+				BCE0BE642CD7C0E4005BDA03 /* Logger */,
 				BC684D632CD5AA7200349FB2 /* Assets.xcassets */,
 				BC684D642CD5AA7200349FB2 /* AudioHop.entitlements */,
 				BC684D672CD5AA7200349FB2 /* MainMenu.xib */,

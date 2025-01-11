@@ -5,10 +5,10 @@
 //  Created by Solomon Alexandru on 01.11.2024.
 //
 
-import SwiftUI
 import AppKit
-import Foundation
 import Factory
+import Foundation
+import SwiftUI
 
 struct PreferencesView: View {
   @Injected(\.deviceStore) private var deviceStore
@@ -34,8 +34,7 @@ struct PreferencesView: View {
             onToggle: { viewModel.toggleFavorite(for: device.id) },
             onAddedShortcut: { newShortcut in
               viewModel.setShortcut(newShortcut, for: device.id)
-            }
-          )
+            })
         }
       }
 

@@ -10,7 +10,7 @@
 		0D70BF48B28AC67C11242773 /* Pods_AudioHopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C71B8CA511E13250BC1460 /* Pods_AudioHopTests.framework */; };
 		BC0A1A3A2CD5B1EE00650C7C /* DeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0A1A392CD5B1EE00650C7C /* DeviceRow.swift */; };
 		BC0A1A3C2CD5B26B00650C7C /* HeartToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0A1A3B2CD5B26900650C7C /* HeartToggleStyle.swift */; };
-		BC10846B2CDD30620057C984 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC10846A2CDD305C0057C984 /* NotificationManager.swift */; };
+		BC10846B2CDD30620057C984 /* UNNotificationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC10846A2CDD305C0057C984 /* UNNotificationWrapper.swift */; };
 		BC10846D2CDD31120057C984 /* StatusBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC10846C2CDD310F0057C984 /* StatusBarManager.swift */; };
 		BC1E244D2CD679AD002DAB8C /* ShortcutPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1E244C2CD67980002DAB8C /* ShortcutPicker.swift */; };
 		BC1E244F2CD681D8002DAB8C /* ShortcutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1E244E2CD681D5002DAB8C /* ShortcutManager.swift */; };
@@ -72,7 +72,7 @@
 		AD9D38428BEEA6CB8A959EA2 /* Pods_AudioHop_AudioHopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioHop_AudioHopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0A1A392CD5B1EE00650C7C /* DeviceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRow.swift; sourceTree = "<group>"; };
 		BC0A1A3B2CD5B26900650C7C /* HeartToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartToggleStyle.swift; sourceTree = "<group>"; };
-		BC10846A2CDD305C0057C984 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		BC10846A2CDD305C0057C984 /* UNNotificationWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNNotificationWrapper.swift; sourceTree = "<group>"; };
 		BC10846C2CDD310F0057C984 /* StatusBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarManager.swift; sourceTree = "<group>"; };
 		BC1E244C2CD67980002DAB8C /* ShortcutPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutPicker.swift; sourceTree = "<group>"; };
 		BC1E244E2CD681D5002DAB8C /* ShortcutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutManager.swift; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 				BC2C55952D32E9950005C125 /* DefaultOutputDeviceListener.swift */,
 				BC62017E2CE2C6F500DD3B85 /* AudioDeviceStore.swift */,
 				BC684D652CD5AA7200349FB2 /* AudioManager.swift */,
-				BC10846A2CDD305C0057C984 /* NotificationManager.swift */,
+				BC10846A2CDD305C0057C984 /* UNNotificationWrapper.swift */,
 				BC1E244E2CD681D5002DAB8C /* ShortcutManager.swift */,
 				BC10846C2CDD310F0057C984 /* StatusBarManager.swift */,
 			);
@@ -333,6 +333,7 @@
 			buildPhases = (
 				AD2947603B1C9ED6F7CD0F04 /* [CP] Check Pods Manifest.lock */,
 				BC684D0A2CD4571800349FB2 /* Sources */,
+				BC2C55972D32FCE10005C125 /* ShellScript */,
 				BC684D0B2CD4571800349FB2 /* Frameworks */,
 				BC684D0C2CD4571800349FB2 /* Resources */,
 				AB0590C48A723830586B50B1 /* [CP] Embed Pods Frameworks */,
@@ -552,6 +553,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BC2C55972D32FCE10005C125 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Adds support for Apple Silicon brew directory\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint; then\n    swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		FA582F39F1079D45A5E7B669 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -601,7 +620,7 @@
 				BC684D6E2CD5AA7200349FB2 /* AppDelegate.swift in Sources */,
 				BC10846D2CDD31120057C984 /* StatusBarManager.swift in Sources */,
 				BC1E24562CD6C30C002DAB8C /* Constant.swift in Sources */,
-				BC10846B2CDD30620057C984 /* NotificationManager.swift in Sources */,
+				BC10846B2CDD30620057C984 /* UNNotificationWrapper.swift in Sources */,
 				BC29B4122CE55B34005C641F /* OnboardingVIew.swift in Sources */,
 				BC26D5D52CE67138004E1F04 /* NSImageRepresentable.swift in Sources */,
 				BC684D6F2CD5AA7200349FB2 /* AudioManager.swift in Sources */,

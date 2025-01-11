@@ -5,17 +5,21 @@
 //  Created by Solomon Alexandru on 07.11.2024.
 //
 
-import Factory
 import AppKit
+import AudioToolbox
 import Cocoa
 import Combine
+import Factory
 import Foundation
-import AudioToolbox
+
+// MARK: - StatusBarManagerDelegate
 
 protocol StatusBarManagerDelegate: AnyObject {
   func didPressPreferences()
   func didPressHelp()
 }
+
+// MARK: - StatusBarManager
 
 final class StatusBarManager {
   @Injected(\.logger) private var logger
@@ -31,12 +35,10 @@ final class StatusBarManager {
 
   init() {
     statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-
-    setupStatusButton()
     setupObservers()
   }
 
-  private func setupStatusButton() {
+  func setupStatusButton() {
     guard let button = statusItem.button, let defaultDevice = deviceStore.getDefaultDevice() else {
       return
     }
@@ -69,11 +71,13 @@ final class StatusBarManager {
     NotificationCenter.default.removeObserver(self)
   }
 
-  @objc private func resetMenu() {
+  @objc
+  private func resetMenu() {
     deviceMenu = nil
   }
 
-  @objc private func updateMenuBarIcon(_ audioDeviceID: AudioDeviceID) {
+  @objc
+  private func updateMenuBarIcon(_ audioDeviceID: AudioDeviceID) {
     guard
       let device = deviceStore.getDeviceByID(audioDeviceID),
       let icon = makeBarIcon(for: device.outputType),
@@ -108,7 +112,8 @@ final class StatusBarManager {
     return icon
   }
 
-  @objc private func toggleAudioOutput() {
+  @objc
+  private func toggleAudioOutput() {
     guard let event = NSApp.currentEvent else {
       return
     }
@@ -138,7 +143,10 @@ final class StatusBarManager {
     let devices = deviceStore.getShowableDevices()
 
     for device in devices {
-      let menuItem = NSMenuItem(title: device.name, action: #selector(selectDevice(_:)), keyEquivalent: deviceStore.getShortcutKeyCodeStringForDevice(device))
+      let menuItem = NSMenuItem(
+        title: device.name,
+        action: #selector(selectDevice(_:)),
+        keyEquivalent: deviceStore.getShortcutKeyCodeStringForDevice(device))
       menuItem.target = self
       menuItem.representedObject = device
 
@@ -154,8 +162,7 @@ final class StatusBarManager {
     let preferencesItem = NSMenuItem(
       title: "Preferences...",
       action: #selector(showPreferences),
-      keyEquivalent: ","
-    )
+      keyEquivalent: ",")
     preferencesItem.target = self
     menu.addItem(preferencesItem)
 
@@ -165,19 +172,22 @@ final class StatusBarManager {
 
     menu.addItem(NSMenuItem.separator())
     menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-    
+
     return menu
   }
 
-  @objc private func showPreferences() {
+  @objc
+  private func showPreferences() {
     delegate?.didPressPreferences()
   }
 
-  @objc private func showHelp() {
+  @objc
+  private func showHelp() {
     delegate?.didPressHelp()
   }
 
-  @objc private func selectDevice(_ sender: NSMenuItem) {
+  @objc
+  private func selectDevice(_ sender: NSMenuItem) {
     guard let device = sender.representedObject as? AudioDevice else {
       return
     }

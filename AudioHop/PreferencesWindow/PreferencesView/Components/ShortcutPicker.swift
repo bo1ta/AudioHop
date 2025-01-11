@@ -5,8 +5,8 @@
 //  Created by Solomon Alexandru on 02.11.2024.
 //
 
-import SwiftUI
 import MASShortcut
+import SwiftUI
 
 struct ShortcutPickerView: NSViewRepresentable {
   var shortcutValue: MASShortcut?
@@ -14,7 +14,7 @@ struct ShortcutPickerView: NSViewRepresentable {
 
   private let fixedWidth: CGFloat = 100
 
-  func makeNSView(context: Context) -> MASShortcutView {
+  func makeNSView(context _: Context) -> MASShortcutView {
     let view = MASShortcutView(frame: .zero)
     if let shortcutValue {
       view.shortcutValue = shortcutValue
@@ -26,11 +26,11 @@ struct ShortcutPickerView: NSViewRepresentable {
     view.translatesAutoresizingMaskIntoConstraints = false
 
     NSLayoutConstraint.activate([
-      view.widthAnchor.constraint(equalToConstant: fixedWidth)
+      view.widthAnchor.constraint(equalToConstant: fixedWidth),
     ])
 
     return view
   }
 
-  func updateNSView(_ nsView: MASShortcutView, context: Context) {}
+  func updateNSView(_: MASShortcutView, context _: Context) { }
 }

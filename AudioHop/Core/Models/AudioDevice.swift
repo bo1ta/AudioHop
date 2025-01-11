@@ -5,23 +5,29 @@
 //  Created by Solomon Alexandru on 02.11.2024.
 //
 
-import Foundation
 import AudioToolbox
+import Foundation
 
 struct AudioDevice: Codable, Identifiable {
   var id: AudioDeviceID
   var name: String
   var isDefault: Bool
   var outputType: AudioOutputType
-
-  var isFavorite: Bool = false
-  var shortcut: [String: Any]? = nil
+  var isFavorite = false
+  var shortcut: [String: Any]?
 
   enum CodingKeys: String, CodingKey {
     case id, name, isDefault, outputType, isFavorite, shortcut
   }
 
-  init(id: AudioDeviceID, name: String, isDefault: Bool, outputType: AudioOutputType, isFavorite: Bool = false, shortcut: [String: Any]? = nil) {
+  init(
+    id: AudioDeviceID,
+    name: String,
+    isDefault: Bool,
+    outputType: AudioOutputType,
+    isFavorite: Bool = false,
+    shortcut: [String: Any]? = nil)
+  {
     self.id = id
     self.name = name
     self.isDefault = isDefault
@@ -53,11 +59,10 @@ struct AudioDevice: Codable, Identifiable {
     try container.encode(outputType.rawValue, forKey: .outputType)
     try container.encode(isFavorite, forKey: .isFavorite)
 
-    if let shortcut = shortcut {
+    if let shortcut {
       let shortcutData = try NSKeyedArchiver.archivedData(
         withRootObject: shortcut,
-        requiringSecureCoding: false
-      )
+        requiringSecureCoding: false)
       try container.encode(shortcutData, forKey: .shortcut)
     }
   }

@@ -7,7 +7,7 @@
 
 import UserNotifications
 
-struct NotificationHelper {
+enum NotificationHelper {
   static func showNotification(with message: String) {
     let content = UNMutableNotificationContent()
     content.title = "Audio Hop"

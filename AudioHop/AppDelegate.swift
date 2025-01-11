@@ -5,9 +5,11 @@
 //  Created by Solomon Alexandru on 01.11.2024.
 //
 
-import Cocoa
 import AppKit
+import Cocoa
 import Factory
+
+// MARK: - AppDelegate
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -16,34 +18,53 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @Injected(\.deviceStore) private var deviceStore: AudioDeviceStore
   @Injected(\.defaultDeviceListener) private var defaultDeviceListener
 
-  private var statusBarManager: StatusBarManager!
-  private var userNotificationManager: NotificationManager!
-
   var preferencesWindowController: PreferencesWindowController?
   var onboardingWindowController: OnboardingWindowController?
 
-  func applicationDidFinishLaunching(_ aNotification: Notification) {
-    NSApp.setActivationPolicy(.accessory)
-    logger.configure()
+  private let statusBarManager: StatusBarManager
+  private let notificationWrapper: UNNotificationWrapper
 
-    deviceStore.initialLoad()
-
-    userNotificationManager = NotificationManager()
-
+  override init() {
+    notificationWrapper = UNNotificationWrapper()
     statusBarManager = StatusBarManager()
+
+    super.init()
+  }
+
+  func applicationDidFinishLaunching(_: Notification) {
+    // Configure app to be menu-bar only
+    NSApp.setActivationPolicy(.accessory)
+
+    // Activate delegate callbacks for Status Bar
     statusBarManager.delegate = self
 
+    // Prepare for logging
+    logger.configure()
+
+    // Actives shortcuts (if they exist)
+    shortcutManager.setupShortcuts()
+
+    // Populate device store with current output devices
+    deviceStore.initialLoad()
+
+    // Status bar is now ready for setup
+    statusBarManager.setupStatusButton()
+
+    // Start listening to the default output device
+    // Emits event on update
     defaultDeviceListener.start()
   }
 
-  func applicationWillTerminate(_ aNotification: Notification) {
-    NotificationCenter.default.removeObserver(self)
+  func applicationWillTerminate(_: Notification) {
+    defaultDeviceListener.stop()
   }
 
-  func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
-    return true
+  func applicationSupportsSecureRestorableState(_: NSApplication) -> Bool {
+    true
   }
 }
+
+// MARK: StatusBarManagerDelegate
 
 extension AppDelegate: StatusBarManagerDelegate {
   func didPressPreferences() {

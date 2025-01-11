@@ -5,17 +5,17 @@
 //  Created by Solomon Alexandru on 14.11.2024.
 //
 
-import SwiftUI
 import AppKit
+import SwiftUI
 
 struct GIFImageView: NSViewRepresentable {
   let imageName: String
 
   private func getGifUrl(named name: String) -> URL? {
-      return Bundle.main.url(forResource: name, withExtension: "gif")
+    Bundle.main.url(forResource: name, withExtension: "gif")
   }
 
-  func makeNSView(context: Context) -> NSImageView {
+  func makeNSView(context _: Context) -> NSImageView {
     let imageView = NSImageView()
     imageView.canDrawSubviewsIntoLayer = true
     imageView.imageScaling = .scaleProportionallyUpOrDown
@@ -26,7 +26,7 @@ struct GIFImageView: NSViewRepresentable {
     return imageView
   }
 
-  func updateNSView(_ nsView: NSImageView, context: Context) {
+  func updateNSView(_ nsView: NSImageView, context _: Context) {
     if let gifUrl = getGifUrl(named: imageName), let gifImage = NSImage(contentsOf: gifUrl) {
       nsView.image = gifImage
     }

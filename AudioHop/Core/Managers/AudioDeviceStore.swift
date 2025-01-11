@@ -5,10 +5,10 @@
 //  Created by Solomon Alexandru on 12.11.2024.
 //
 
-import Foundation
 import AudioToolbox
 import Combine
 import Factory
+import Foundation
 
 final class AudioDeviceStore {
   @Injected(\.audioManager) private var audioManager
@@ -20,7 +20,11 @@ final class AudioDeviceStore {
   private var cancellables: Set<AnyCancellable> = []
 
   init() {
-    NotificationCenter.default.addObserver(self, selector: #selector(reloadPreferences), name: .onUpdateFavoriteDevices, object: nil)
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(reloadPreferences),
+      name: .onUpdateFavoriteDevices,
+      object: nil)
 
     shortcutManager.eventPublisher
       .sink { [weak self] _ in
@@ -40,13 +44,13 @@ final class AudioDeviceStore {
   }
 
   func initialLoad() {
-      let storedDevices = loadStoredDevices()
-      let currentDevices = audioManager.getOutputDevices()
-      audioDevices = mergeDevices(currentDevices: currentDevices, storedDevices: storedDevices)
+    let storedDevices = loadStoredDevices()
+    let currentDevices = audioManager.getOutputDevices()
+    audioDevices = mergeDevices(currentDevices: currentDevices, storedDevices: storedDevices)
   }
 
   private func mergeDevices(currentDevices: [AudioDevice], storedDevices: [AudioDevice]) -> [AudioDevice] {
-    return currentDevices.map { currentDevice in
+    currentDevices.map { currentDevice in
       if let storedDevice = storedDevices.first(where: { $0.id == currentDevice.id }) {
         var updatedDevice = currentDevice
         updatedDevice.isFavorite = storedDevice.isFavorite
@@ -58,23 +62,24 @@ final class AudioDeviceStore {
     }
   }
 
-  @objc private func reloadPreferences() {
-      let storedDevices = self.loadStoredDevices()
+  @objc
+  private func reloadPreferences() {
+    let storedDevices = self.loadStoredDevices()
 
-      self.audioDevices = self.audioDevices.map { currentDevice in
-        if let storedDevice = storedDevices.first(where: { $0.id == currentDevice.id }) {
-          var updatedDevice = currentDevice
-          updatedDevice.isFavorite = storedDevice.isFavorite
-          updatedDevice.shortcut = storedDevice.shortcut
-          return updatedDevice
-        }
-
-        return currentDevice
+    self.audioDevices = self.audioDevices.map { currentDevice in
+      if let storedDevice = storedDevices.first(where: { $0.id == currentDevice.id }) {
+        var updatedDevice = currentDevice
+        updatedDevice.isFavorite = storedDevice.isFavorite
+        updatedDevice.shortcut = storedDevice.shortcut
+        return updatedDevice
       }
+
+      return currentDevice
+    }
   }
 
   private func loadStoredDevices() -> [AudioDevice] {
-    return AudioDeviceStorage.loadDevices()
+    AudioDeviceStorage.loadDevices()
   }
 
   private func reloadDevices() {
@@ -82,12 +87,11 @@ final class AudioDeviceStore {
   }
 
   func getDefaultDevice() -> AudioDevice? {
-      return audioDevices.first { $0.isDefault }
+    audioDevices.first { $0.isDefault }
   }
 
-
   func getDeviceByID(_ id: AudioDeviceID) -> AudioDevice? {
-      return audioDevices.first { $0.id == id }
+    audioDevices.first { $0.id == id }
   }
 
   func getShowableDevices() -> [AudioDevice] {
@@ -127,8 +131,9 @@ final class AudioDeviceStore {
     return audioManager.setDefaultOutputDevice(deviceID: nextDevice.id) ? nextDevice : nil
   }
 
-  @discardableResult func setDefaultOutput(_ device: AudioDevice) -> Bool {
-    return audioManager.setDefaultOutputDevice(deviceID: device.id)
+  @discardableResult
+  func setDefaultOutput(_ device: AudioDevice) -> Bool {
+    audioManager.setDefaultOutputDevice(deviceID: device.id)
   }
 
   private func resetDefaultDevice() {

@@ -8,6 +8,8 @@
 import Foundation
 import Sentry
 
+// MARK: - SentryLogger
+
 final class SentryLogger: Logger {
   func configure() {
     SentrySDK.start { options in
@@ -31,13 +33,13 @@ final class SentryLogger: Logger {
   }
 }
 
-private extension LogLevel {
-  func toSentryLevel() -> SentryLevel {
+extension LogLevel {
+  fileprivate func toSentryLevel() -> SentryLevel {
     switch self {
-    case .debug: return .debug
-    case .info: return .info
-    case .warning: return .warning
-    case .error: return .error
+    case .debug: .debug
+    case .info: .info
+    case .warning: .warning
+    case .error: .error
     }
   }
 }

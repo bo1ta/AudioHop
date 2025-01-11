@@ -5,11 +5,13 @@
 //  Created by Solomon Alexandru on 02.11.2024.
 //
 
-import MASShortcut
-import CoreAudio
-import SwiftUI
-import Factory
 import Combine
+import CoreAudio
+import Factory
+import MASShortcut
+import SwiftUI
+
+// MARK: - ShortcutManager
 
 final class ShortcutManager {
   enum Event {
@@ -23,15 +25,11 @@ final class ShortcutManager {
   private let shortcutMonitor = MASShortcutMonitor.shared()
   private let dictionaryTransformer = MASDictionaryTransformer()
 
-  public var eventPublisher: AnyPublisher<Event, Never> {
+  var eventPublisher: AnyPublisher<Event, Never> {
     eventSubject.eraseToAnyPublisher()
   }
 
-  init() {
-    setupShortcuts()
-  }
-
-  private func setupShortcuts() {
+  func setupShortcuts() {
     shortcutMonitor?.unregisterAllShortcuts()
 
     let preferences = AudioDeviceStorage.loadDevices()
@@ -73,17 +71,19 @@ final class ShortcutManager {
   }
 
   func dictionaryFromShortcut(_ shortcut: MASShortcut) -> [String: Any]? {
-    return dictionaryTransformer.reverseTransformedValue(shortcut) as? [String: Any]
+    dictionaryTransformer.reverseTransformedValue(shortcut) as? [String: Any]
   }
 
   func shortcutFromDictionary(_ dictionary: [String: Any]) -> MASShortcut? {
-    return dictionaryTransformer.transformedValue(dictionary) as? MASShortcut
+    dictionaryTransformer.transformedValue(dictionary) as? MASShortcut
   }
 
   private func postShortcutUpdatedNotification(_ shortcut: MASShortcut) {
     eventSubject.send(.shortcutUpdated(shortcut))
   }
 }
+
+// MARK: ShortcutManager.CustomError
 
 extension ShortcutManager {
   enum CustomError: Error {

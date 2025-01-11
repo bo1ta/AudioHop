@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AudioDeviceStorage {
+enum AudioDeviceStorage {
   private static let defaults = UserDefaults.standard
   private static let key = "audioDevicePreferences"
 
@@ -18,7 +18,10 @@ struct AudioDeviceStorage {
   }
 
   static func loadDevices() -> [AudioDevice] {
-    guard let data = defaults.data(forKey: key), let preferences = try? JSONDecoder().decode([AudioDevice].self, from: data) else {
+    guard
+      let data = defaults.data(forKey: key),
+      let preferences = try? JSONDecoder().decode([AudioDevice].self, from: data)
+    else {
       return []
     }
     return preferences

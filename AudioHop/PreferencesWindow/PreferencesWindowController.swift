@@ -7,14 +7,15 @@
 
 import SwiftUI
 
+// MARK: - PreferencesWindowController
+
 class PreferencesWindowController: NSWindowController {
   convenience init() {
     let window = NSWindow(
       contentRect: NSRect(x: 0, y: 0, width: 400, height: 300),
       styleMask: [.titled, .closable, .miniaturizable],
       backing: .buffered,
-      defer: false
-    )
+      defer: false)
 
     window.center()
     window.setFrameAutosaveName("Preferences")
@@ -28,11 +29,11 @@ class PreferencesWindowController: NSWindowController {
       self,
       selector: #selector(windowWillClose),
       name: NSWindow.willCloseNotification,
-      object: window
-    )
+      object: window)
   }
 
-  @objc private func windowWillClose() {
+  @objc
+  private func windowWillClose() {
     if let delegate = NSApplication.shared.delegate as? AppDelegate {
       delegate.preferencesWindowController = nil
     }
@@ -43,6 +44,7 @@ class PreferencesWindowController: NSWindowController {
   }
 }
 
+// MARK: - OnboardingWindowController
 
 class OnboardingWindowController: NSWindowController {
   convenience init() {
@@ -50,8 +52,7 @@ class OnboardingWindowController: NSWindowController {
       contentRect: NSRect(x: 0, y: 0, width: 400, height: 300),
       styleMask: [.titled, .closable, .miniaturizable],
       backing: .buffered,
-      defer: false
-    )
+      defer: false)
 
     window.center()
     window.setFrameAutosaveName("Preferences")
@@ -65,11 +66,11 @@ class OnboardingWindowController: NSWindowController {
       self,
       selector: #selector(windowWillClose),
       name: NSWindow.willCloseNotification,
-      object: window
-    )
+      object: window)
   }
 
-  @objc private func windowWillClose() {
+  @objc
+  private func windowWillClose() {
     if let delegate = NSApplication.shared.delegate as? AppDelegate {
       delegate.onboardingWindowController = nil
     }

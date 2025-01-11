@@ -5,12 +5,14 @@
 //  Created by Solomon Alexandru on 01.11.2024.
 //
 
-import SwiftUI
 import AudioToolbox
 import Combine
+import Factory
 import MASShortcut
 import ServiceManagement
-import Factory
+import SwiftUI
+
+// MARK: - PreferencesViewModel
 
 @Observable
 @MainActor
@@ -51,10 +53,9 @@ class PreferencesViewModel {
     devices = deviceStore.audioDevices
   }
 
-  @objc private func updateDefaultDevice(_ audioDeviceID: AudioDeviceID) {
-    guard
-      let firstIndex = devices.firstIndex(where: { $0.id == audioDeviceID })
-    else {
+  @objc
+  private func updateDefaultDevice(_ audioDeviceID: AudioDeviceID) {
+    guard devices.firstIndex(where: { $0.id == audioDeviceID }) != nil else {
       logger.error(CustomError.invalidDevice, message: "Could not update default device")
       return
     }
@@ -63,7 +64,7 @@ class PreferencesViewModel {
   }
 
   func getLaunchAtLoginState() async -> Bool {
-    return SMAppService.mainApp.status == .enabled
+    SMAppService.mainApp.status == .enabled
   }
 
   func toggleLaunchAtLogin() {
@@ -139,9 +140,11 @@ class PreferencesViewModel {
   }
 
   func isFavorite(_ deviceID: AudioDeviceID) -> Bool {
-    return devices.first(where: { $0.id == deviceID })?.isFavorite ?? false
+    devices.first(where: { $0.id == deviceID })?.isFavorite ?? false
   }
 }
+
+// MARK: PreferencesViewModel.CustomError
 
 extension PreferencesViewModel {
   enum CustomError: Error {

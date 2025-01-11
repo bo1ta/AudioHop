@@ -5,12 +5,16 @@
 //  Created by Solomon Alexandru on 03.11.2024.
 //
 
+// MARK: - LogLevel
+
 enum LogLevel: String {
   case info
   case warning
   case error
   case debug
 }
+
+// MARK: - Logger
 
 protocol Logger {
   func configure()

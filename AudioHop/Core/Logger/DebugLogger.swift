@@ -7,9 +7,11 @@
 
 import Foundation
 
+// MARK: - DebugLogger
+
 class DebugLogger: Logger {
-  func configure() {}
-  
+  func configure() { }
+
   func log(message: String, level: LogLevel, error: Error?) {
     let levelEmoji = level.emoji
     let errorDescription = error?.localizedDescription ?? ""
@@ -18,8 +20,8 @@ class DebugLogger: Logger {
   }
 }
 
-private extension LogLevel {
-  var emoji: String {
+extension LogLevel {
+  fileprivate var emoji: String {
     switch self {
     case .info:
       "ℹ️"

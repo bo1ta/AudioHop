@@ -6,8 +6,10 @@
 //
 
 import AudioToolbox
-import Foundation
 import Factory
+import Foundation
+
+// MARK: - AudioManager
 
 public final class AudioManager {
   @Injected(\.logger) private var logger: Logger
@@ -16,23 +18,23 @@ public final class AudioManager {
     var devices: [AudioDevice] = []
 
     var addressStreamConfiguration = AudioObjectPropertyAddress(
-        mSelector: kAudioDevicePropertyStreamConfiguration,
-        mScope: kAudioDevicePropertyScopeOutput,
-        mElement: kAudioObjectPropertyElementMain)
+      mSelector: kAudioDevicePropertyStreamConfiguration,
+      mScope: kAudioDevicePropertyScopeOutput,
+      mElement: kAudioObjectPropertyElementMain)
     var addressTransportType = AudioObjectPropertyAddress(
-        mSelector: kAudioDevicePropertyTransportType,
-        mScope: kAudioDevicePropertyScopeOutput,
-        mElement: kAudioObjectPropertyElementMain)
+      mSelector: kAudioDevicePropertyTransportType,
+      mScope: kAudioDevicePropertyScopeOutput,
+      mElement: kAudioObjectPropertyElementMain)
     var addressDeviceName = AudioObjectPropertyAddress(
-        mSelector: kAudioDevicePropertyDeviceNameCFString,
-        mScope: kAudioDevicePropertyScopeOutput,
-        mElement: kAudioObjectPropertyElementMain)
+      mSelector: kAudioDevicePropertyDeviceNameCFString,
+      mScope: kAudioDevicePropertyScopeOutput,
+      mElement: kAudioObjectPropertyElementMain)
 
     var propertySize = UInt32(0)
     var address = AudioObjectPropertyAddress(
-        mSelector: kAudioHardwarePropertyDevices,
-        mScope: kAudioObjectPropertyScopeOutput,
-        mElement: kAudioObjectPropertyElementMain)
+      mSelector: kAudioHardwarePropertyDevices,
+      mScope: kAudioObjectPropertyScopeOutput,
+      mElement: kAudioObjectPropertyElementMain)
 
     var status = AudioObjectGetPropertyDataSize(AudioObjectID(kAudioObjectSystemObject), &address, 0, nil, &propertySize)
     guard status == noErr else {
@@ -53,7 +55,13 @@ public final class AudioManager {
     var defaultOutputID: AudioDeviceID = 0
     address.mSelector = kAudioHardwarePropertyDefaultOutputDevice
     propertySize = UInt32(MemoryLayout<AudioDeviceID>.size)
-    status = AudioObjectGetPropertyData(AudioObjectID(kAudioObjectSystemObject), &address, 0, nil, &propertySize, &defaultOutputID)
+    status = AudioObjectGetPropertyData(
+      AudioObjectID(kAudioObjectSystemObject),
+      &address,
+      0,
+      nil,
+      &propertySize,
+      &defaultOutputID)
 
     guard status == noErr else {
       logger.error(CustomError.invalidDeviceList, message: "Error getting default output device: \(status)")
@@ -92,8 +100,7 @@ public final class AudioManager {
     var address = AudioObjectPropertyAddress(
       mSelector: kAudioHardwarePropertyDefaultOutputDevice,
       mScope: kAudioObjectPropertyScopeGlobal,
-      mElement: kAudioObjectPropertyElementMain
-    )
+      mElement: kAudioObjectPropertyElementMain)
     return getDeviceID(&address)
   }
 
@@ -101,10 +108,15 @@ public final class AudioManager {
     var address = AudioObjectPropertyAddress(
       mSelector: kAudioHardwarePropertyDefaultOutputDevice,
       mScope: kAudioObjectPropertyScopeGlobal,
-      mElement: kAudioObjectPropertyElementMain
-    )
+      mElement: kAudioObjectPropertyElementMain)
     var mutableDeviceID = deviceID
-    let status = AudioObjectSetPropertyData(AudioObjectID(kAudioObjectSystemObject), &address, 0, nil, UInt32(MemoryLayout<AudioDeviceID>.size), &mutableDeviceID)
+    let status = AudioObjectSetPropertyData(
+      AudioObjectID(kAudioObjectSystemObject),
+      &address,
+      0,
+      nil,
+      UInt32(MemoryLayout<AudioDeviceID>.size),
+      &mutableDeviceID)
     return status == noErr
   }
 
@@ -145,15 +157,13 @@ public final class AudioManager {
     return true
   }
 
-
   func getDeviceCount() -> UInt32 {
     var propertySize = UInt32(MemoryLayout<UInt32>.size)
 
     var address = AudioObjectPropertyAddress(
       mSelector: kAudioHardwarePropertyDevices,
       mScope: kAudioObjectPropertyScopeOutput,
-      mElement: kAudioObjectPropertyElementMain
-    )
+      mElement: kAudioObjectPropertyElementMain)
 
     let status = AudioObjectGetPropertyDataSize(AudioObjectID(kAudioObjectSystemObject), &address, 0, nil, &propertySize)
     guard status == noErr else {
@@ -169,8 +179,7 @@ public final class AudioManager {
     var devicesAddress = AudioObjectPropertyAddress(
       mSelector: kAudioHardwarePropertyDevices,
       mScope: kAudioDevicePropertyScopeOutput,
-      mElement: kAudioObjectPropertyElementMain
-    )
+      mElement: kAudioObjectPropertyElementMain)
 
     var status = AudioObjectGetPropertyDataSize(AudioObjectID(kAudioObjectSystemObject), &devicesAddress, 0, nil, &propertySize)
     guard status == noErr else {
@@ -181,7 +190,13 @@ public final class AudioManager {
     let deviceCount = Int(propertySize) / MemoryLayout<AudioDeviceID>.size
     var deviceIDs = [AudioDeviceID](repeating: 0, count: deviceCount)
 
-    status = AudioObjectGetPropertyData(AudioObjectID(kAudioObjectSystemObject), &devicesAddress, 0, nil, &propertySize, &deviceIDs)
+    status = AudioObjectGetPropertyData(
+      AudioObjectID(kAudioObjectSystemObject),
+      &devicesAddress,
+      0,
+      nil,
+      &propertySize,
+      &deviceIDs)
     guard status == noErr else {
       logger.error(CustomError.invalidDeviceList, message: "Error getting device IDs: \(status)")
       return
@@ -211,37 +226,39 @@ public final class AudioManager {
       return nil
     }
 
-    let outputType: AudioOutputType
-    switch transportType {
+    return switch transportType {
     case kAudioDeviceTransportTypeBuiltIn:
       if isHeadphones(deviceID: deviceID) {
-        outputType = .headphones
+        .headphones
       } else {
-        outputType = .builtIn
+        .builtIn
       }
-    case kAudioDeviceTransportTypeHDMI:
-      outputType = .hdmi
-    case kAudioDeviceTransportTypeUSB:
-      outputType = .usb
-    case kAudioDeviceTransportTypeBluetooth, kAudioDeviceTransportTypeBluetoothLE:
-      outputType = .bluetoothDevice
-    case kAudioDeviceTransportTypeDisplayPort:
-      outputType = .displayPort
-    case kAudioDeviceTransportTypeAirPlay:
-      outputType = .airplay
-    default:
-      outputType = .unknown
-    }
 
-    return outputType
+    case kAudioDeviceTransportTypeHDMI:
+      .hdmi
+
+    case kAudioDeviceTransportTypeUSB:
+      .usb
+
+    case kAudioDeviceTransportTypeBluetooth, kAudioDeviceTransportTypeBluetoothLE:
+      .bluetoothDevice
+
+    case kAudioDeviceTransportTypeDisplayPort:
+      .displayPort
+
+    case kAudioDeviceTransportTypeAirPlay:
+      .airplay
+
+    default:
+      .unknown
+    }
   }
 
   private func isHeadphones(deviceID: AudioDeviceID) -> Bool {
     var address = AudioObjectPropertyAddress(
       mSelector: kAudioDevicePropertyDataSource,
       mScope: kAudioDevicePropertyScopeOutput,
-      mElement: kAudioObjectPropertyElementMain
-    )
+      mElement: kAudioObjectPropertyElementMain)
 
     var dataSource = UInt32(0)
     var propertySize = UInt32(MemoryLayout<UInt32>.size)
@@ -255,6 +272,8 @@ public final class AudioManager {
     return dataSource == FourCharCode("hdpn")
   }
 }
+
+// MARK: AudioManager.CustomError
 
 extension AudioManager {
   enum CustomError: Error {

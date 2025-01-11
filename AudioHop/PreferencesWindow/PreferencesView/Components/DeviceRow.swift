@@ -5,8 +5,8 @@
 //  Created by Solomon Alexandru on 02.11.2024.
 //
 
-import SwiftUI
 import MASShortcut
+import SwiftUI
 
 struct DeviceRow: View {
   let device: AudioDevice
@@ -22,7 +22,7 @@ struct DeviceRow: View {
         set: { _ in onToggle() }
       ))
       .toggleStyle(HeartToggleStyle())
-      
+
       VStack(alignment: .leading) {
         Text(device.name)
           .font(.body)
@@ -49,11 +49,9 @@ struct DeviceRow: View {
       id: 0,
       name: "Device 0",
       isDefault: false,
-      outputType: .airplay
-    ),
+      outputType: .airplay),
     shortcut: nil,
     isFavorite: false,
-    onToggle: {},
-    onAddedShortcut: { _ in }
-  )
+    onToggle: { },
+    onAddedShortcut: { _ in })
 }

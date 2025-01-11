@@ -15,9 +15,9 @@ extension Container {
   }
 
   var audioManager: Factory<AudioManager> {
-     self { AudioManager() }
-       .singleton
-   }
+    self { AudioManager() }
+      .singleton
+  }
 
   var logger: Factory<Logger> {
     self { SentryLogger() }

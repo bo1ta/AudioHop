@@ -76,8 +76,11 @@ public final class AudioManager {
       else {
         return nil
       }
-
-      return AudioDevice(id: deviceID, name: name, isDefault: deviceID == defaultOutputID, outputType: outputType)
+      return AudioDevice(
+        id: deviceID,
+        name: name,
+        isDefault: deviceID == defaultOutputID,
+        outputType: outputType)
     }
 
     return devices

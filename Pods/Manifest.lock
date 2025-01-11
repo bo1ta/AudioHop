@@ -1,0 +1,26 @@
+PODS:
+  - Factory (2.4.1)
+  - MASShortcut (2.4.0)
+  - Sentry (8.39.0):
+    - Sentry/Core (= 8.39.0)
+  - Sentry/Core (8.39.0)
+
+DEPENDENCIES:
+  - Factory (~> 2.4.1)
+  - MASShortcut
+  - Sentry (~> 8.39)
+
+SPEC REPOS:
+  trunk:
+    - Factory
+    - MASShortcut
+    - Sentry
+
+SPEC CHECKSUMS:
+  Factory: 13e63ac988c73f13c55c251b0748a9518e078710
+  MASShortcut: d9e4909e878661cc42877cc9d6efbe638273ab57
+  Sentry: e92ec378be400dbb7f4065ff152d0f362ba8b4ba
+
+PODFILE CHECKSUM: c3a9bd558cac254c2b33b780662da4e16e9ab2e5
+
+COCOAPODS: 1.15.2

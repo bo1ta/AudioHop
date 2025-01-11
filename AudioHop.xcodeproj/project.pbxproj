@@ -1,0 +1,960 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D70BF48B28AC67C11242773 /* Pods_AudioHopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C71B8CA511E13250BC1460 /* Pods_AudioHopTests.framework */; };
+		BC0A1A3A2CD5B1EE00650C7C /* DeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0A1A392CD5B1EE00650C7C /* DeviceRow.swift */; };
+		BC0A1A3C2CD5B26B00650C7C /* HeartToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0A1A3B2CD5B26900650C7C /* HeartToggleStyle.swift */; };
+		BC10846B2CDD30620057C984 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC10846A2CDD305C0057C984 /* NotificationManager.swift */; };
+		BC10846D2CDD31120057C984 /* StatusBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC10846C2CDD310F0057C984 /* StatusBarManager.swift */; };
+		BC1E244D2CD679AD002DAB8C /* ShortcutPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1E244C2CD67980002DAB8C /* ShortcutPicker.swift */; };
+		BC1E244F2CD681D8002DAB8C /* ShortcutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1E244E2CD681D5002DAB8C /* ShortcutManager.swift */; };
+		BC1E24512CD69F60002DAB8C /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1E24502CD69F5D002DAB8C /* NotificationHelper.swift */; };
+		BC1E24542CD6AEEC002DAB8C /* NSNotification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1E24532CD6AED9002DAB8C /* NSNotification+Extension.swift */; };
+		BC1E24562CD6C30C002DAB8C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1E24552CD6C30B002DAB8C /* Constant.swift */; };
+		BC1E24582CD6D62B002DAB8C /* AudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1E24572CD6D627002DAB8C /* AudioDevice.swift */; };
+		BC1E245A2CD6D6A7002DAB8C /* AudioOutputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1E24592CD6D6A4002DAB8C /* AudioOutputType.swift */; };
+		BC26D5D52CE67138004E1F04 /* NSImageRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC26D5D42CE6712B004E1F04 /* NSImageRepresentable.swift */; };
+		BC26D5D82CE672AF004E1F04 /* left-clicking-tip.gif in Resources */ = {isa = PBXBuildFile; fileRef = BC26D5D72CE672AF004E1F04 /* left-clicking-tip.gif */; };
+		BC26D5DA2CE67552004E1F04 /* right-clicking-tip.gif in Resources */ = {isa = PBXBuildFile; fileRef = BC26D5D92CE67552004E1F04 /* right-clicking-tip.gif */; };
+		BC29B4122CE55B34005C641F /* OnboardingVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29B4112CE55B34005C641F /* OnboardingVIew.swift */; };
+		BC2C55962D32E9AB0005C125 /* DefaultOutputDeviceListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2C55952D32E9950005C125 /* DefaultOutputDeviceListener.swift */; };
+		BC62017F2CE2C6FA00DD3B85 /* AudioDeviceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62017E2CE2C6F500DD3B85 /* AudioDeviceStore.swift */; };
+		BC684D532CD5AA6C00349FB2 /* AudioHopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC684D512CD5AA6C00349FB2 /* AudioHopTests.swift */; };
+		BC684D572CD5AA6E00349FB2 /* AudioHopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC684D542CD5AA6E00349FB2 /* AudioHopUITests.swift */; };
+		BC684D582CD5AA6E00349FB2 /* AudioHopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC684D552CD5AA6E00349FB2 /* AudioHopUITestsLaunchTests.swift */; };
+		BC684D6A2CD5AA7200349FB2 /* AudioDeviceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC684D5B2CD5AA7200349FB2 /* AudioDeviceStorage.swift */; };
+		BC684D6B2CD5AA7200349FB2 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC684D5D2CD5AA7200349FB2 /* PreferencesView.swift */; };
+		BC684D6C2CD5AA7200349FB2 /* PreferencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC684D5E2CD5AA7200349FB2 /* PreferencesViewModel.swift */; };
+		BC684D6D2CD5AA7200349FB2 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC684D5F2CD5AA7200349FB2 /* PreferencesWindowController.swift */; };
+		BC684D6E2CD5AA7200349FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC684D622CD5AA7200349FB2 /* AppDelegate.swift */; };
+		BC684D6F2CD5AA7200349FB2 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC684D652CD5AA7200349FB2 /* AudioManager.swift */; };
+		BC684D702CD5AA7200349FB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC684D632CD5AA7200349FB2 /* Assets.xcassets */; };
+		BC684D712CD5AA7200349FB2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC684D672CD5AA7200349FB2 /* MainMenu.xib */; };
+		BCD9B5792CD7DF8000D2FFD4 /* DebugLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD9B5782CD7DF7E00D2FFD4 /* DebugLogger.swift */; };
+		BCE0BE662CD7C102005BDA03 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0BE652CD7C0FA005BDA03 /* Logger.swift */; };
+		BCE0BE682CD7C42C005BDA03 /* SentryLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0BE672CD7C42A005BDA03 /* SentryLogger.swift */; };
+		BCE0BE6A2CD7C6A5005BDA03 /* Container+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE0BE692CD7C69F005BDA03 /* Container+Extension.swift */; };
+		C410AACE3FE98804D54AFFE6 /* Pods_AudioHop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE51D768C913353C183E0D7 /* Pods_AudioHop.framework */; };
+		F17C434A9B2CD7CDB7FE835A /* Pods_AudioHop_AudioHopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9D38428BEEA6CB8A959EA2 /* Pods_AudioHop_AudioHopUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC684D1E2CD4571A00349FB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC684D062CD4571800349FB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC684D0D2CD4571800349FB2;
+			remoteInfo = AudioHop;
+		};
+		BC684D282CD4571A00349FB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC684D062CD4571800349FB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC684D0D2CD4571800349FB2;
+			remoteInfo = AudioHop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11C71B8CA511E13250BC1460 /* Pods_AudioHopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioHopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17DA1817CAE67060255FBDB3 /* Pods-AudioHop-AudioHopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioHop-AudioHopUITests.debug.xcconfig"; path = "Target Support Files/Pods-AudioHop-AudioHopUITests/Pods-AudioHop-AudioHopUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3F7AC51066FB5E70C8BA4580 /* Pods-AudioHopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioHopTests.debug.xcconfig"; path = "Target Support Files/Pods-AudioHopTests/Pods-AudioHopTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3FE51D768C913353C183E0D7 /* Pods_AudioHop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioHop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		489571CF26F7AEDBA6590509 /* Pods-AudioHop-AudioHopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioHop-AudioHopUITests.release.xcconfig"; path = "Target Support Files/Pods-AudioHop-AudioHopUITests/Pods-AudioHop-AudioHopUITests.release.xcconfig"; sourceTree = "<group>"; };
+		79B5B1532EFB95D584024308 /* Pods-AudioHop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioHop.debug.xcconfig"; path = "Target Support Files/Pods-AudioHop/Pods-AudioHop.debug.xcconfig"; sourceTree = "<group>"; };
+		92508DFCCE218AD96DB41ABE /* Pods-AudioHopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioHopTests.release.xcconfig"; path = "Target Support Files/Pods-AudioHopTests/Pods-AudioHopTests.release.xcconfig"; sourceTree = "<group>"; };
+		AD9D38428BEEA6CB8A959EA2 /* Pods_AudioHop_AudioHopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudioHop_AudioHopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC0A1A392CD5B1EE00650C7C /* DeviceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRow.swift; sourceTree = "<group>"; };
+		BC0A1A3B2CD5B26900650C7C /* HeartToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartToggleStyle.swift; sourceTree = "<group>"; };
+		BC10846A2CDD305C0057C984 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		BC10846C2CDD310F0057C984 /* StatusBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarManager.swift; sourceTree = "<group>"; };
+		BC1E244C2CD67980002DAB8C /* ShortcutPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutPicker.swift; sourceTree = "<group>"; };
+		BC1E244E2CD681D5002DAB8C /* ShortcutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutManager.swift; sourceTree = "<group>"; };
+		BC1E24502CD69F5D002DAB8C /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		BC1E24532CD6AED9002DAB8C /* NSNotification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Extension.swift"; sourceTree = "<group>"; };
+		BC1E24552CD6C30B002DAB8C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		BC1E24572CD6D627002DAB8C /* AudioDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
+		BC1E24592CD6D6A4002DAB8C /* AudioOutputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioOutputType.swift; sourceTree = "<group>"; };
+		BC26D5D42CE6712B004E1F04 /* NSImageRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageRepresentable.swift; sourceTree = "<group>"; };
+		BC26D5D72CE672AF004E1F04 /* left-clicking-tip.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "left-clicking-tip.gif"; sourceTree = "<group>"; };
+		BC26D5D92CE67552004E1F04 /* right-clicking-tip.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "right-clicking-tip.gif"; sourceTree = "<group>"; };
+		BC29B4112CE55B34005C641F /* OnboardingVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVIew.swift; sourceTree = "<group>"; };
+		BC2C55952D32E9950005C125 /* DefaultOutputDeviceListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultOutputDeviceListener.swift; sourceTree = "<group>"; };
+		BC62017E2CE2C6F500DD3B85 /* AudioDeviceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDeviceStore.swift; sourceTree = "<group>"; };
+		BC684D0E2CD4571800349FB2 /* AudioHop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioHop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC684D1D2CD4571A00349FB2 /* AudioHopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioHopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC684D272CD4571A00349FB2 /* AudioHopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioHopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC684D512CD5AA6C00349FB2 /* AudioHopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHopTests.swift; sourceTree = "<group>"; };
+		BC684D542CD5AA6E00349FB2 /* AudioHopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHopUITests.swift; sourceTree = "<group>"; };
+		BC684D552CD5AA6E00349FB2 /* AudioHopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BC684D5B2CD5AA7200349FB2 /* AudioDeviceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDeviceStorage.swift; sourceTree = "<group>"; };
+		BC684D5D2CD5AA7200349FB2 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		BC684D5E2CD5AA7200349FB2 /* PreferencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewModel.swift; sourceTree = "<group>"; };
+		BC684D5F2CD5AA7200349FB2 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		BC684D622CD5AA7200349FB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BC684D632CD5AA7200349FB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC684D642CD5AA7200349FB2 /* AudioHop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AudioHop.entitlements; sourceTree = "<group>"; };
+		BC684D652CD5AA7200349FB2 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		BC684D662CD5AA7200349FB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BCD9B5782CD7DF7E00D2FFD4 /* DebugLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLogger.swift; sourceTree = "<group>"; };
+		BCE0BE652CD7C0FA005BDA03 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		BCE0BE672CD7C42A005BDA03 /* SentryLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentryLogger.swift; sourceTree = "<group>"; };
+		BCE0BE692CD7C69F005BDA03 /* Container+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Extension.swift"; sourceTree = "<group>"; };
+		F896948269EFF481FB540D85 /* Pods-AudioHop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioHop.release.xcconfig"; path = "Target Support Files/Pods-AudioHop/Pods-AudioHop.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC684D0B2CD4571800349FB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C410AACE3FE98804D54AFFE6 /* Pods_AudioHop.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC684D1A2CD4571A00349FB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D70BF48B28AC67C11242773 /* Pods_AudioHopTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC684D242CD4571A00349FB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F17C434A9B2CD7CDB7FE835A /* Pods_AudioHop_AudioHopUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D6D5F55C16DFB5576303C1E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79B5B1532EFB95D584024308 /* Pods-AudioHop.debug.xcconfig */,
+				F896948269EFF481FB540D85 /* Pods-AudioHop.release.xcconfig */,
+				17DA1817CAE67060255FBDB3 /* Pods-AudioHop-AudioHopUITests.debug.xcconfig */,
+				489571CF26F7AEDBA6590509 /* Pods-AudioHop-AudioHopUITests.release.xcconfig */,
+				3F7AC51066FB5E70C8BA4580 /* Pods-AudioHopTests.debug.xcconfig */,
+				92508DFCCE218AD96DB41ABE /* Pods-AudioHopTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BC0A1A382CD5B1DF00650C7C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BC0A1A392CD5B1EE00650C7C /* DeviceRow.swift */,
+				BC0A1A3B2CD5B26900650C7C /* HeartToggleStyle.swift */,
+				BC1E244C2CD67980002DAB8C /* ShortcutPicker.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BC0A1A3D2CD5B2BD00650C7C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BC1084692CDD30550057C984 /* Managers */,
+				BC1084682CDD2F140057C984 /* Helpers */,
+				BC684D5A2CD5AA7200349FB2 /* Models */,
+				BCE0BE642CD7C0E4005BDA03 /* Logger */,
+				BC1E24522CD6AECC002DAB8C /* Extensions */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		BC1084682CDD2F140057C984 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BC26D5D42CE6712B004E1F04 /* NSImageRepresentable.swift */,
+				BC1E24552CD6C30B002DAB8C /* Constant.swift */,
+				BC1E24502CD69F5D002DAB8C /* NotificationHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BC1084692CDD30550057C984 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				BC2C55952D32E9950005C125 /* DefaultOutputDeviceListener.swift */,
+				BC62017E2CE2C6F500DD3B85 /* AudioDeviceStore.swift */,
+				BC684D652CD5AA7200349FB2 /* AudioManager.swift */,
+				BC10846A2CDD305C0057C984 /* NotificationManager.swift */,
+				BC1E244E2CD681D5002DAB8C /* ShortcutManager.swift */,
+				BC10846C2CDD310F0057C984 /* StatusBarManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		BC1E24522CD6AECC002DAB8C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BCE0BE692CD7C69F005BDA03 /* Container+Extension.swift */,
+				BC1E24532CD6AED9002DAB8C /* NSNotification+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BC26D5D62CE6728C004E1F04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC26D5D72CE672AF004E1F04 /* left-clicking-tip.gif */,
+				BC26D5D92CE67552004E1F04 /* right-clicking-tip.gif */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC29B4102CE55B1D005C641F /* OnboardingWindow */ = {
+			isa = PBXGroup;
+			children = (
+				BC29B4112CE55B34005C641F /* OnboardingVIew.swift */,
+			);
+			path = OnboardingWindow;
+			sourceTree = "<group>";
+		};
+		BC684D052CD4571800349FB2 = {
+			isa = PBXGroup;
+			children = (
+				BC684D682CD5AA7200349FB2 /* AudioHop */,
+				BC684D522CD5AA6C00349FB2 /* AudioHopTests */,
+				BC684D562CD5AA6E00349FB2 /* AudioHopUITests */,
+				BC684D0F2CD4571800349FB2 /* Products */,
+				4D6D5F55C16DFB5576303C1E /* Pods */,
+				F55F29BAE67BD4082EDE7DC3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BC684D0F2CD4571800349FB2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC684D0E2CD4571800349FB2 /* AudioHop.app */,
+				BC684D1D2CD4571A00349FB2 /* AudioHopTests.xctest */,
+				BC684D272CD4571A00349FB2 /* AudioHopUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC684D522CD5AA6C00349FB2 /* AudioHopTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC684D512CD5AA6C00349FB2 /* AudioHopTests.swift */,
+			);
+			path = AudioHopTests;
+			sourceTree = "<group>";
+		};
+		BC684D562CD5AA6E00349FB2 /* AudioHopUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BC684D542CD5AA6E00349FB2 /* AudioHopUITests.swift */,
+				BC684D552CD5AA6E00349FB2 /* AudioHopUITestsLaunchTests.swift */,
+			);
+			path = AudioHopUITests;
+			sourceTree = "<group>";
+		};
+		BC684D5A2CD5AA7200349FB2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BC1E24592CD6D6A4002DAB8C /* AudioOutputType.swift */,
+				BC1E24572CD6D627002DAB8C /* AudioDevice.swift */,
+				BC684D5B2CD5AA7200349FB2 /* AudioDeviceStorage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BC684D602CD5AA7200349FB2 /* PreferencesView */ = {
+			isa = PBXGroup;
+			children = (
+				BC684D5D2CD5AA7200349FB2 /* PreferencesView.swift */,
+				BC684D5E2CD5AA7200349FB2 /* PreferencesViewModel.swift */,
+				BC0A1A382CD5B1DF00650C7C /* Components */,
+			);
+			path = PreferencesView;
+			sourceTree = "<group>";
+		};
+		BC684D612CD5AA7200349FB2 /* PreferencesWindow */ = {
+			isa = PBXGroup;
+			children = (
+				BC684D5F2CD5AA7200349FB2 /* PreferencesWindowController.swift */,
+				BC684D602CD5AA7200349FB2 /* PreferencesView */,
+			);
+			path = PreferencesWindow;
+			sourceTree = "<group>";
+		};
+		BC684D682CD5AA7200349FB2 /* AudioHop */ = {
+			isa = PBXGroup;
+			children = (
+				BC684D622CD5AA7200349FB2 /* AppDelegate.swift */,
+				BC29B4102CE55B1D005C641F /* OnboardingWindow */,
+				BC684D612CD5AA7200349FB2 /* PreferencesWindow */,
+				BC0A1A3D2CD5B2BD00650C7C /* Core */,
+				BC684D632CD5AA7200349FB2 /* Assets.xcassets */,
+				BC684D642CD5AA7200349FB2 /* AudioHop.entitlements */,
+				BC684D672CD5AA7200349FB2 /* MainMenu.xib */,
+				BC26D5D62CE6728C004E1F04 /* Supporting Files */,
+			);
+			path = AudioHop;
+			sourceTree = "<group>";
+		};
+		BCE0BE642CD7C0E4005BDA03 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				BCE0BE652CD7C0FA005BDA03 /* Logger.swift */,
+				BCD9B5782CD7DF7E00D2FFD4 /* DebugLogger.swift */,
+				BCE0BE672CD7C42A005BDA03 /* SentryLogger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		F55F29BAE67BD4082EDE7DC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FE51D768C913353C183E0D7 /* Pods_AudioHop.framework */,
+				AD9D38428BEEA6CB8A959EA2 /* Pods_AudioHop_AudioHopUITests.framework */,
+				11C71B8CA511E13250BC1460 /* Pods_AudioHopTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC684D0D2CD4571800349FB2 /* AudioHop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC684D312CD4571A00349FB2 /* Build configuration list for PBXNativeTarget "AudioHop" */;
+			buildPhases = (
+				AD2947603B1C9ED6F7CD0F04 /* [CP] Check Pods Manifest.lock */,
+				BC684D0A2CD4571800349FB2 /* Sources */,
+				BC684D0B2CD4571800349FB2 /* Frameworks */,
+				BC684D0C2CD4571800349FB2 /* Resources */,
+				AB0590C48A723830586B50B1 /* [CP] Embed Pods Frameworks */,
+				18BDDC568B124020B244BFFF /* Upload Debug Symbols to Sentry */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AudioHop;
+			productName = AudioHop;
+			productReference = BC684D0E2CD4571800349FB2 /* AudioHop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BC684D1C2CD4571A00349FB2 /* AudioHopTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC684D342CD4571A00349FB2 /* Build configuration list for PBXNativeTarget "AudioHopTests" */;
+			buildPhases = (
+				A86E04DE3F1D87F01BE9D2E9 /* [CP] Check Pods Manifest.lock */,
+				BC684D192CD4571A00349FB2 /* Sources */,
+				BC684D1A2CD4571A00349FB2 /* Frameworks */,
+				BC684D1B2CD4571A00349FB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC684D1F2CD4571A00349FB2 /* PBXTargetDependency */,
+			);
+			name = AudioHopTests;
+			productName = AudioHopTests;
+			productReference = BC684D1D2CD4571A00349FB2 /* AudioHopTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BC684D262CD4571A00349FB2 /* AudioHopUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC684D372CD4571A00349FB2 /* Build configuration list for PBXNativeTarget "AudioHopUITests" */;
+			buildPhases = (
+				FA582F39F1079D45A5E7B669 /* [CP] Check Pods Manifest.lock */,
+				BC684D232CD4571A00349FB2 /* Sources */,
+				BC684D242CD4571A00349FB2 /* Frameworks */,
+				BC684D252CD4571A00349FB2 /* Resources */,
+				6B9745B8EDF8E7A9018F90C3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC684D292CD4571A00349FB2 /* PBXTargetDependency */,
+			);
+			name = AudioHopUITests;
+			productName = AudioHopUITests;
+			productReference = BC684D272CD4571A00349FB2 /* AudioHopUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC684D062CD4571800349FB2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					BC684D0D2CD4571800349FB2 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					BC684D1C2CD4571A00349FB2 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = BC684D0D2CD4571800349FB2;
+					};
+					BC684D262CD4571A00349FB2 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = BC684D0D2CD4571800349FB2;
+					};
+				};
+			};
+			buildConfigurationList = BC684D092CD4571800349FB2 /* Build configuration list for PBXProject "AudioHop" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC684D052CD4571800349FB2;
+			productRefGroup = BC684D0F2CD4571800349FB2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC684D0D2CD4571800349FB2 /* AudioHop */,
+				BC684D1C2CD4571A00349FB2 /* AudioHopTests */,
+				BC684D262CD4571A00349FB2 /* AudioHopUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC684D0C2CD4571800349FB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC684D702CD5AA7200349FB2 /* Assets.xcassets in Resources */,
+				BC26D5DA2CE67552004E1F04 /* right-clicking-tip.gif in Resources */,
+				BC684D712CD5AA7200349FB2 /* MainMenu.xib in Resources */,
+				BC26D5D82CE672AF004E1F04 /* left-clicking-tip.gif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC684D1B2CD4571A00349FB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC684D252CD4571A00349FB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18BDDC568B124020B244BFFF /* Upload Debug Symbols to Sentry */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+			);
+			name = "Upload Debug Symbols to Sentry";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This script is responsable to upload debug symbols and source context for Sentry.\nif which sentry-cli >/dev/null; then\nexport SENTRY_ORG=audiohop\nexport SENTRY_PROJECT=apple-ios\nERROR=$(sentry-cli debug-files upload --include-sources \"$DWARF_DSYM_FOLDER_PATH\" 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"warning: sentry-cli - $ERROR\"\nfi\nelse\necho \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
+		};
+		6B9745B8EDF8E7A9018F90C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AudioHop-AudioHopUITests/Pods-AudioHop-AudioHopUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AudioHop-AudioHopUITests/Pods-AudioHop-AudioHopUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AudioHop-AudioHopUITests/Pods-AudioHop-AudioHopUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A86E04DE3F1D87F01BE9D2E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AudioHopTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB0590C48A723830586B50B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AudioHop/Pods-AudioHop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AudioHop/Pods-AudioHop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AudioHop/Pods-AudioHop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD2947603B1C9ED6F7CD0F04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AudioHop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA582F39F1079D45A5E7B669 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AudioHop-AudioHopUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC684D0A2CD4571800349FB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCE0BE682CD7C42C005BDA03 /* SentryLogger.swift in Sources */,
+				BCE0BE6A2CD7C6A5005BDA03 /* Container+Extension.swift in Sources */,
+				BCD9B5792CD7DF8000D2FFD4 /* DebugLogger.swift in Sources */,
+				BC684D6A2CD5AA7200349FB2 /* AudioDeviceStorage.swift in Sources */,
+				BC0A1A3A2CD5B1EE00650C7C /* DeviceRow.swift in Sources */,
+				BC1E244F2CD681D8002DAB8C /* ShortcutManager.swift in Sources */,
+				BC0A1A3C2CD5B26B00650C7C /* HeartToggleStyle.swift in Sources */,
+				BC62017F2CE2C6FA00DD3B85 /* AudioDeviceStore.swift in Sources */,
+				BC1E245A2CD6D6A7002DAB8C /* AudioOutputType.swift in Sources */,
+				BC1E24582CD6D62B002DAB8C /* AudioDevice.swift in Sources */,
+				BC684D6B2CD5AA7200349FB2 /* PreferencesView.swift in Sources */,
+				BC1E24512CD69F60002DAB8C /* NotificationHelper.swift in Sources */,
+				BC1E244D2CD679AD002DAB8C /* ShortcutPicker.swift in Sources */,
+				BC684D6C2CD5AA7200349FB2 /* PreferencesViewModel.swift in Sources */,
+				BC684D6D2CD5AA7200349FB2 /* PreferencesWindowController.swift in Sources */,
+				BC2C55962D32E9AB0005C125 /* DefaultOutputDeviceListener.swift in Sources */,
+				BCE0BE662CD7C102005BDA03 /* Logger.swift in Sources */,
+				BC684D6E2CD5AA7200349FB2 /* AppDelegate.swift in Sources */,
+				BC10846D2CDD31120057C984 /* StatusBarManager.swift in Sources */,
+				BC1E24562CD6C30C002DAB8C /* Constant.swift in Sources */,
+				BC10846B2CDD30620057C984 /* NotificationManager.swift in Sources */,
+				BC29B4122CE55B34005C641F /* OnboardingVIew.swift in Sources */,
+				BC26D5D52CE67138004E1F04 /* NSImageRepresentable.swift in Sources */,
+				BC684D6F2CD5AA7200349FB2 /* AudioManager.swift in Sources */,
+				BC1E24542CD6AEEC002DAB8C /* NSNotification+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC684D192CD4571A00349FB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC684D532CD5AA6C00349FB2 /* AudioHopTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC684D232CD4571A00349FB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC684D572CD5AA6E00349FB2 /* AudioHopUITests.swift in Sources */,
+				BC684D582CD5AA6E00349FB2 /* AudioHopUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC684D1F2CD4571A00349FB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC684D0D2CD4571800349FB2 /* AudioHop */;
+			targetProxy = BC684D1E2CD4571A00349FB2 /* PBXContainerItemProxy */;
+		};
+		BC684D292CD4571A00349FB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC684D0D2CD4571800349FB2 /* AudioHop */;
+			targetProxy = BC684D282CD4571A00349FB2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BC684D672CD5AA7200349FB2 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC684D662CD5AA7200349FB2 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC684D2F2CD4571A00349FB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BC684D302CD4571A00349FB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		BC684D322CD4571A00349FB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79B5B1532EFB95D584024308 /* Pods-AudioHop.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AudioHop/AudioHop.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8JV792LAQ5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandrusolomon.AudioHop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BC684D332CD4571A00349FB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F896948269EFF481FB540D85 /* Pods-AudioHop.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AudioHop/AudioHop.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8JV792LAQ5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandrusolomon.AudioHop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		BC684D352CD4571A00349FB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F7AC51066FB5E70C8BA4580 /* Pods-AudioHopTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 8JV792LAQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandrusolomon.AudioHopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AudioHop.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AudioHop";
+			};
+			name = Debug;
+		};
+		BC684D362CD4571A00349FB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92508DFCCE218AD96DB41ABE /* Pods-AudioHopTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 8JV792LAQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandrusolomon.AudioHopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AudioHop.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AudioHop";
+			};
+			name = Release;
+		};
+		BC684D382CD4571A00349FB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17DA1817CAE67060255FBDB3 /* Pods-AudioHop-AudioHopUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 8JV792LAQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandrusolomon.AudioHopUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = AudioHop;
+			};
+			name = Debug;
+		};
+		BC684D392CD4571A00349FB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 489571CF26F7AEDBA6590509 /* Pods-AudioHop-AudioHopUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 8JV792LAQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexandrusolomon.AudioHopUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = AudioHop;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC684D092CD4571800349FB2 /* Build configuration list for PBXProject "AudioHop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC684D2F2CD4571A00349FB2 /* Debug */,
+				BC684D302CD4571A00349FB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC684D312CD4571A00349FB2 /* Build configuration list for PBXNativeTarget "AudioHop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC684D322CD4571A00349FB2 /* Debug */,
+				BC684D332CD4571A00349FB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC684D342CD4571A00349FB2 /* Build configuration list for PBXNativeTarget "AudioHopTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC684D352CD4571A00349FB2 /* Debug */,
+				BC684D362CD4571A00349FB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC684D372CD4571A00349FB2 /* Build configuration list for PBXNativeTarget "AudioHopUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC684D382CD4571A00349FB2 /* Debug */,
+				BC684D392CD4571A00349FB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC684D062CD4571800349FB2 /* Project object */;
+}

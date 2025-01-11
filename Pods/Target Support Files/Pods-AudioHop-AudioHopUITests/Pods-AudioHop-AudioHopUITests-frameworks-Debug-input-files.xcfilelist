@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-AudioHop-AudioHopUITests/Pods-AudioHop-AudioHopUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Factory/Factory.framework
+${BUILT_PRODUCTS_DIR}/MASShortcut/MASShortcut.framework
+${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework

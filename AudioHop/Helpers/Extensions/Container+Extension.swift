@@ -11,27 +11,27 @@ import Foundation
 extension Container {
   var shortcutManager: Factory<ShortcutManager> {
     self { ShortcutManager() }
-      .shared
+      .cached
+  }
+
+  var deviceStore: Factory<AudioDeviceStore> {
+    self { AudioDeviceStore() }
+      .cached
+  }
+
+  var defaultDeviceListener: Factory<DefaultOutputDeviceListener> {
+    self { DefaultOutputDeviceListener() }
+      .cached
   }
 
   var audioManager: Factory<AudioManager> {
     self { AudioManager() }
-      .singleton
+      .shared
   }
 
   var logger: Factory<Logger> {
     self { SentryLogger() }
       .onDebug { DebugLogger() }
       .singleton
-  }
-
-  var deviceStore: Factory<AudioDeviceStore> {
-    self { AudioDeviceStore() }
-      .shared
-  }
-
-  var defaultDeviceListener: Factory<DefaultOutputDeviceListener> {
-    self { DefaultOutputDeviceListener() }
-      .cached
   }
 }

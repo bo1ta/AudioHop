@@ -113,7 +113,10 @@ final class AudioDeviceStore {
 
   func switchToNextOutput() -> AudioDevice? {
     var devicesToUse = audioDevices.filter(\.isFavorite)
-    if let defaultDevice = getDefaultDevice(), !devicesToUse.contains(where: { $0.id == defaultDevice.id }) {
+    if
+      let defaultDevice = getDefaultDevice(),
+      !devicesToUse.contains(where: { $0.id == defaultDevice.id })
+    {
       devicesToUse.insert(defaultDevice, at: 0)
     }
 

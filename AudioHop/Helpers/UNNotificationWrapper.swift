@@ -16,16 +16,21 @@ final class UNNotificationWrapper: NSObject {
 
   func requestAuthorization() {
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { [weak self] success, error in
+      guard let self else {
+        return
+      }
+
       guard error == nil else {
-        self?.logger.error(error ?? NSError(domain: "UNNotificationWrapper", code: 100), message: "Error requesting authorization permissions")
+        logger.error(
+          error ?? NSError(domain: "UNNotificationWrapper", code: 100),
+          message: "Error requesting authorization permissions")
         return
       }
 
       if success {
         UNUserNotificationCenter.current().delegate = self
-        print("Notification permissions granted")
       } else {
-        print("Notification permissions denied")
+        logger.info("UNUserNotificationCenter did not authorize")
       }
     }
   }

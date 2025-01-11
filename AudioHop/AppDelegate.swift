@@ -41,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // Prepare for logging
     logger.configure()
 
-    // Actives shortcuts (if they exist)
+    // Activate shortcuts
     shortcutManager.setupShortcuts()
 
     // Populate device store with current output devices
@@ -50,8 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // Status bar is now ready for setup
     statusBarManager.setupStatusButton()
 
-    // Start listening to the default output device
-    // Emits event on update
+    // Start listening to changes on the default output audio device
     defaultDeviceListener.start()
   }
 

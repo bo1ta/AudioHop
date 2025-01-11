@@ -56,7 +56,7 @@ final class ShortcutManager {
     }
 
     shortcutMonitor.register(shortcut, withAction: { [weak self] in
-      guard self?.audioManager.setDefaultOutputDevice(deviceID: deviceID) != false else {
+      guard self?.audioManager.setDefaultOutputDevice(deviceID: deviceID) == true else {
         self?.logger.error(CustomError.invalidDefaultDevice, message: "Error setting default output device for shortcut")
         return
       }

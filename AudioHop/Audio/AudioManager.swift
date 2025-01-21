@@ -149,7 +149,10 @@ public final class AudioManager {
     }
 
     let bufferList = UnsafeMutablePointer<AudioBufferList>.allocate(capacity: Int(propertySize))
-    defer { bufferList.deallocate() }
+    defer {
+      bufferList.deinitialize(count: Int(propertySize))
+      bufferList.deallocate()
+    }
 
     status = AudioObjectGetPropertyData(deviceID, &address, 0, nil, &propertySize, bufferList)
     guard status == noErr else {
@@ -157,7 +160,8 @@ public final class AudioManager {
       return false
     }
 
-    return true
+    let buffers = UnsafeMutableAudioBufferListPointer(bufferList)
+    return buffers.contains(where: { $0.mNumberChannels > 0 })
   }
 
   func getDeviceCount() -> UInt32 {

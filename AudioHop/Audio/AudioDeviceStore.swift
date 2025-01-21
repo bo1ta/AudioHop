@@ -60,6 +60,7 @@ final class AudioDeviceStore {
 
       return currentDevice
     }
+    .removingDuplicates()
   }
 
   @objc

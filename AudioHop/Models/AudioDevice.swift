@@ -67,3 +67,9 @@ struct AudioDevice: Codable, Identifiable {
     }
   }
 }
+
+extension AudioDevice: Equatable {
+    static func ==(lhs: AudioDevice, rhs: AudioDevice) -> Bool {
+    lhs.id == rhs.id
+  }
+}

@@ -20,7 +20,7 @@ struct OnboardingView: View {
         OnboardingPageView(
           imageName: "logo-icon",
           title: "Welcome to Quick Audio Switcher",
-          description: "Quickly switch your audio outputs with a single click. Manage favorites and set shortcuts for fast access.",
+          description: "Quickly switch your audio outputs with a single click. Manage favorites and set shortcuts for quick access.",
           isAnimated: false)
           .tag(0)
 
@@ -113,4 +113,8 @@ struct OnboardingPageView: View {
         .padding(.horizontal)
     }
   }
+}
+
+#Preview {
+    OnboardingView()
 }

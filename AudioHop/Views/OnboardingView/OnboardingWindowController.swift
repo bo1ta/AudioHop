@@ -1,15 +1,13 @@
 //
-//  PreferencesWindowController.swift
+//  OnboardingWindowController.swift
 //  AudioHop
 //
-//  Created by Solomon Alexandru on 01.11.2024.
+//  Created by Solomon Alexandru on 21.01.2025.
 //
 
 import SwiftUI
 
-// MARK: - PreferencesWindowController
-
-class PreferencesWindowController: NSWindowController {
+class OnboardingWindowController: NSWindowController {
   convenience init() {
     let window = NSWindow(
       contentRect: NSRect(x: 0, y: 0, width: 400, height: 300),
@@ -19,8 +17,8 @@ class PreferencesWindowController: NSWindowController {
 
     window.center()
     window.setFrameAutosaveName("Preferences")
-    window.contentView = NSHostingView(rootView: PreferencesView())
-    window.title = "Preferences"
+    window.contentView = NSHostingView(rootView: OnboardingView())
+    window.title = "Onboarding"
     window.isReleasedWhenClosed = true
 
     self.init(window: window)
@@ -35,7 +33,7 @@ class PreferencesWindowController: NSWindowController {
   @objc
   private func windowWillClose() {
     if let delegate = NSApplication.shared.delegate as? AppDelegate {
-      delegate.preferencesWindowController = nil
+      delegate.onboardingWindowController = nil
     }
   }
 

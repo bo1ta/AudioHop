@@ -24,6 +24,7 @@
 		BC26D5DA2CE67552004E1F04 /* right-clicking-tip.gif in Resources */ = {isa = PBXBuildFile; fileRef = BC26D5D92CE67552004E1F04 /* right-clicking-tip.gif */; };
 		BC29B4122CE55B34005C641F /* OnboardingVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC29B4112CE55B34005C641F /* OnboardingVIew.swift */; };
 		BC2C55962D32E9AB0005C125 /* DefaultOutputDeviceListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2C55952D32E9950005C125 /* DefaultOutputDeviceListener.swift */; };
+		BC3E19E82D403CD20032E3CD /* OnboardingWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3E19E72D403CCF0032E3CD /* OnboardingWindowController.swift */; };
 		BC62017F2CE2C6FA00DD3B85 /* AudioDeviceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC62017E2CE2C6F500DD3B85 /* AudioDeviceStore.swift */; };
 		BC684D532CD5AA6C00349FB2 /* AudioHopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC684D512CD5AA6C00349FB2 /* AudioHopTests.swift */; };
 		BC684D572CD5AA6E00349FB2 /* AudioHopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC684D542CD5AA6E00349FB2 /* AudioHopUITests.swift */; };
@@ -86,6 +87,7 @@
 		BC26D5D92CE67552004E1F04 /* right-clicking-tip.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "right-clicking-tip.gif"; sourceTree = "<group>"; };
 		BC29B4112CE55B34005C641F /* OnboardingVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVIew.swift; sourceTree = "<group>"; };
 		BC2C55952D32E9950005C125 /* DefaultOutputDeviceListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultOutputDeviceListener.swift; sourceTree = "<group>"; };
+		BC3E19E72D403CCF0032E3CD /* OnboardingWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWindowController.swift; sourceTree = "<group>"; };
 		BC62017E2CE2C6F500DD3B85 /* AudioDeviceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDeviceStore.swift; sourceTree = "<group>"; };
 		BC684D0E2CD4571800349FB2 /* AudioHop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioHop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC684D1D2CD4571A00349FB2 /* AudioHopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioHopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +205,7 @@
 		BC29B4102CE55B1D005C641F /* OnboardingView */ = {
 			isa = PBXGroup;
 			children = (
+				BC3E19E72D403CCF0032E3CD /* OnboardingWindowController.swift */,
 				BC29B4112CE55B34005C641F /* OnboardingVIew.swift */,
 			);
 			path = OnboardingView;
@@ -612,6 +615,7 @@
 				BC684D6E2CD5AA7200349FB2 /* AppDelegate.swift in Sources */,
 				BC10846D2CDD31120057C984 /* StatusBarManager.swift in Sources */,
 				BC1E24562CD6C30C002DAB8C /* Constant.swift in Sources */,
+				BC3E19E82D403CD20032E3CD /* OnboardingWindowController.swift in Sources */,
 				BC10846B2CDD30620057C984 /* UNNotificationWrapper.swift in Sources */,
 				BC0DE0F72D35E43B00F9F7A0 /* Extensions.swift in Sources */,
 				BC29B4122CE55B34005C641F /* OnboardingVIew.swift in Sources */,
